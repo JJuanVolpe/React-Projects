@@ -1,0 +1,18 @@
+Al intentar ejecutar el servidor de node tuve un problema el cuál 
+no me permitia iniciar el servidor. ->
+
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+solucion: incorporar estos nuevos valores en package.json:
+
+    "start": "react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts --openssl-legacy-provider build",
+
+
+En específica la solución que me sirvió fue la encontrada en el sig. link:
+https://app.aluracursos.com/forum/topico-otra-solucion-facil-al-error-opensslerrorstack-error-03000086-digital-envelope-routines-initialization-error-212697?gad_source=1&gclid=Cj0KCQiAoKeuBhCoARIsAB4WxteFcUHw_d1EO6u1or-CQu47kVNQSk62HFPGQ8_e0XEft9Tr0_SYxI0aApb3EALw_wcB
+    
